@@ -1,0 +1,40 @@
+﻿Build started 22.06.2014 0:44:25.
+     1>Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\internship.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt internship.cpp newAgent.cpp /d1clr:nostdlib 
+         internship.cpp
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(14): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(23): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         newAgent.cpp
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(14): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(23): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+       CoreResGen:
+         No resources are out of date with respect to their source files. Skipping resource generation.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\internship.Agent.resources /ASSEMBLYRESOURCE:Debug\internship.newAgent.resources /ASSEMBLYRESOURCE:Debug\internship.Server.resources /MANIFEST /ManifestFile:"Debug\internship.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\Agent.obj
+         Debug\AssemblyInfo.obj
+         Debug\internship.obj
+         Debug\newAgent.obj
+         Debug\stdafx.obj
+         internship.vcxproj -> C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe;#1" /manifest Debug\internship.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\internship.unsuccessfulbuild".
+         Touching "Debug\internship.lastbuildstate".
+     1>Done Building Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.28
