@@ -1,10 +1,11 @@
-#include "newAgent.h"
-#include "Painter.h"
+
 #pragma once
 
 
 namespace internship {
 
+	class myObject;
+	ref class Painter;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -12,39 +13,18 @@ namespace internship {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Summary for Form1
-	/// </summary>
 	public ref class Server : public System::Windows::Forms::Form
 	{
 	public:
-		Server(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-			col = 0;
-			countOfAgents = new int(0);
-			newagent1 = gcnew newAgent(countOfAgents);
-		}
+		Server(void);
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~Server()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+		~Server();
 	private: System::Windows::Forms::Label^  labelObj;
 	protected: 
 	private: System::Windows::Forms::Label^  labelAgent;
 	private: System::Windows::Forms::Label^  labelKolAgent;
-	private: System::Windows::Forms::PictureBox^  pictureBoxObj;
+	 public: System::Windows::Forms::PictureBox^  pictureBoxObj;
 
 
 	private: System::Windows::Forms::CheckedListBox^  checkedListBoxObj;
@@ -52,12 +32,11 @@ namespace internship {
 
 
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
 		newAgent^ newagent1;
 		int *col;
-		int *countOfAgents;
+		int countOfAgents;
+		myObject* listOfObjects;
+		Painter^ newPainter;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -151,41 +130,10 @@ namespace internship {
 
 		}
 #pragma endregion
-	private: System::Void Server_Load(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				newagent1->Show();
-			 }
-	private: System::Void buttonOk_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 IEnumerator^ myEnum = checkedListBoxObj->CheckedIndices->GetEnumerator();
-				 int count1 = (checkedListBoxObj->CheckedIndices->Count);
-				 col = new int[count1]();
-				 int i = 0;
-				 while(myEnum->MoveNext())
-				 {
-					 Int32 indexChecked =  *safe_cast<Int32^>(myEnum->Current);
-					 col[i] = indexChecked;
-					 i++;
-				 }
-				 pictureBoxObj->Refresh();
-			 }
-	private: System::Void pictureBoxObj_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)
-			{
-				int i = 0;
-				if(col)
-				{
-					Painter newPainter;
-					while (i < checkedListBoxObj->CheckedIndices->Count)
-					{
-						myObject obj = myObject(0, col[i]);
-						newPainter.paint(&e, &obj);
-						i++;
-					}
-				}
-				}
-	private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e)
-			 {
-				 labelKolAgent->Text = System::Convert::ToString(*countOfAgents);
-			 }
+	public: void toCountLabel();
+	private: System::Void Server_Load(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void buttonOk_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void pictureBoxObj_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
+	private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

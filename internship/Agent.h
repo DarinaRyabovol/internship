@@ -2,6 +2,7 @@
 
 namespace internship {
 
+	ref class Server;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -15,31 +16,14 @@ namespace internship {
 	public ref class Agent : public System::Windows::Forms::Form
 	{
 	public:
-		Agent(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-		Agent(String ^ name)
-		{
-			InitializeComponent();
-			this->Name = name;
-			this->Text = name;
-		}
+		Agent(void);
+		Agent(String ^ name, Server^ serv);
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Agent()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+		~Agent();
 	private: System::Windows::Forms::PictureBox^  pictureBoxAgent;
 	protected: 
 
@@ -47,6 +31,7 @@ namespace internship {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
+		Server^ serv;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -82,7 +67,6 @@ namespace internship {
 
 		}
 #pragma endregion
-	private: System::Void Agent_Load(System::Object^  sender, System::EventArgs^  e) {
-			 }
+	private: System::Void Agent_Load(System::Object^  sender, System::EventArgs^  e);
 	};
 }

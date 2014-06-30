@@ -1,9 +1,6 @@
 // internship.cpp : main project file.
 
 #include "stdafx.h"
-#include "Server.h"
-#include "newAgent.h"
-
 using namespace internship;
 
 [STAThreadAttribute]

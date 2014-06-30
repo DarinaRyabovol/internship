@@ -1,7 +1,7 @@
 #pragma once
-#include "Agent.h"
 namespace internship {
 
+	ref class Server;
 	using namespace std;
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -15,30 +15,14 @@ namespace internship {
 	public ref class newAgent : public System::Windows::Forms::Form
 	{
 	public:
-		newAgent(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-		newAgent(int *count)
-		{
-			InitializeComponent();
-			countOfAgents = count;
-		}
+		newAgent(void);
+		newAgent(Server^ myParent);
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~newAgent()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+		~newAgent();
 	public: System::Windows::Forms::Button^  buttonAdd;
 	private: System::Windows::Forms::TextBox^  textBoxName;
 	protected: 
@@ -47,7 +31,7 @@ namespace internship {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		int * countOfAgents;
+		Server^ myParent;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -93,14 +77,7 @@ namespace internship {
 
 		}
 #pragma endregion
-	private: System::Void newAgent_Load(System::Object^  sender, System::EventArgs^  e) {
-			 }
-	private: System::Void buttonAdd_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 Agent^ agent1 = gcnew Agent(textBoxName->Text);
-				 textBoxName->Text = L"";
-				 agent1->Show();
-				 (*countOfAgents) ++;
-			 }
+	private: System::Void newAgent_Load(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void buttonAdd_Click(System::Object^  sender, System::EventArgs^  e);
 	};
 }
