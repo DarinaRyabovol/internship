@@ -1,21 +1,11 @@
-﻿Build started 02.07.2014 16:37:09.
+﻿Build started 02.07.2014 23:51:47.
      1>Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\internship.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt Painter.cpp /d1clr:nostdlib 
-         Painter.cpp
-     1>Painter.cpp(14): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(14): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(39): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Painter.cpp(39): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt Server.cpp /d1clr:nostdlib 
+         Server.cpp
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
@@ -39,4 +29,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.97
+Time Elapsed 00:00:04.79

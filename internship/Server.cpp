@@ -65,6 +65,7 @@ namespace internship {
 					 col[i] = indexChecked;
 					 i++;
 				 }
+				 listOfObjects->Clear();
 				 System::Random ^ r = gcnew System::Random();
 				 for(i = 0; i < 10; i++)
 				 {
