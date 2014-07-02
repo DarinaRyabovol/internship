@@ -77,6 +77,7 @@ namespace internship {
 
 		}
 #pragma endregion
+#pragma endregion
 	private: System::Void newAgent_Load(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void buttonAdd_Click(System::Object^  sender, System::EventArgs^  e);
 	};

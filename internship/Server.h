@@ -4,7 +4,8 @@
 
 namespace internship {
 
-	class myObject;
+	ref class myObject;
+	ref class Agent;
 	ref class Painter;
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -30,12 +31,14 @@ namespace internship {
 	private: System::Windows::Forms::CheckedListBox^  checkedListBoxObj;
 	private: System::Windows::Forms::Button^  buttonOk;
 
+	public:
 
+		System::Collections::ArrayList^ listOfObjects;
 	private:
 		newAgent^ newagent1;
 		int *col;
 		int countOfAgents;
-		myObject* listOfObjects;
+		System::Collections::ArrayList^ listOfAgetns;
 		Painter^ newPainter;
 		System::ComponentModel::Container ^components;
 
@@ -130,7 +133,11 @@ namespace internship {
 
 		}
 #pragma endregion
+
+#pragma endregion
 	public: void toCountLabel();
+	public: void getNewAgent(Agent^ newAg);
+	private: void UpdateAllAgents();
 	private: System::Void Server_Load(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void buttonOk_Click(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void pictureBoxObj_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);

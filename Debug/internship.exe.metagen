@@ -37,16 +37,29 @@ Class internship.Server: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Windows.Forms.PictureBox pictureBoxObj : Public
+    System.Collections.ArrayList listOfObjects : Public
   Methods:
     toCountLabel(): PrivateScope, Public, HideBySig
+    getNewAgent(Agent): PrivateScope, Public, HideBySig
 Class internship.Agent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.PictureBox pictureBoxAgent : Public
+  Methods:
+    UpdateMe(): PrivateScope, Public, HideBySig
 Class internship.Painter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    paint(): PrivateScope, Public, HideBySig
-    paint(myObject*): PrivateScope, Public, HideBySig
-Struct internship.myObject: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
-  :System.ValueType
+    paint(PaintEventArgs): PrivateScope, Public, HideBySig
+    paint(PaintEventArgs, myObject): PrivateScope, Public, HideBySig
+Class internship.myObject: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getShape(): PrivateScope, Public, HideBySig
+    getColor(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

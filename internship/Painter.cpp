@@ -5,43 +5,38 @@ namespace internship
 {
 	using namespace System;
 
-	void Painter::printEllipce(int color)
+	void Painter::printEllipce(System::Windows::Forms::PaintEventArgs^ e, int color)
 		{
-			Random^ r = gcnew Random(0);
-			System::Drawing::Graphics^ e = myServ->pictureBoxObj->CreateGraphics();
+			Random^ r = gcnew Random(color);
 			switch(color)
 			{
 			case 0:
-				(e)->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(10 +(r->Next()%100)*45,10,40,40));
+				e->Graphics->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
 				break;
 			case 1:
-				(e)->FillEllipse(System::Drawing::Brushes::Red,System::Drawing::RectangleF(10 + (r->Next()%100)*45,10,40,40));
+				e->Graphics->FillEllipse(System::Drawing::Brushes::Red,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
 				break;
 			case 2:
-				(e)->FillEllipse(System::Drawing::Brushes::Blue,System::Drawing::RectangleF(10 + (r->Next()%100)*45,10,40,40));
+				e->Graphics->FillEllipse(System::Drawing::Brushes::Blue,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
 				break;
 			case 3:
-				(e)->FillEllipse(System::Drawing::Brushes::Violet,System::Drawing::RectangleF(10 + (r->Next()%100)*45,10,40,40));
+				e->Graphics->FillEllipse(System::Drawing::Brushes::DarkOrange,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
 				break;
 			}
 		}
-
 	Painter::Painter(Server^ Serv)
 		{
 			myServ = Serv;
-			myAgent = nullptr;
+			dt = gcnew System::DateTime(2013,5,30);
 		}
-	void Painter::paint(myObject* obj)
+	void Painter::paint(System::Windows::Forms::PaintEventArgs^ e, myObject^ obj)
 		{
-			printEllipce(obj->getColor());
+			printEllipce(e, obj->getColor());
 		}
-	System::Drawing::Graphics^ Painter::paint()
+	void Painter::paint(System::Windows::Forms::PaintEventArgs^ e)
 	{
-		Random^ r = gcnew Random(0);
-		System::Drawing::Graphics^ e = (myServ)->pictureBoxObj->CreateGraphics();
-		System::Drawing::RectangleF^ rect = gcnew System::Drawing::RectangleF(10,10,100,20);
-		e->FillRectangle(System::Drawing::Brushes::BlueViolet, *rect);
-	//	e->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(45,10,40,40));
-		return e;
+		Random^ r = gcnew Random();
+		e->Graphics->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(r->Next(0,200),r->Next(0,150),40,40));
+		return ;
 	}
 }

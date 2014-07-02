@@ -31,11 +31,25 @@ namespace internship {
 				countOfAgents++;
 				labelKolAgent->Text = Convert::ToString(countOfAgents);
 			}
+	void Server::getNewAgent(Agent^ newAg)
+	{
+		listOfAgetns->Add(newAg);
+	}
+	void Server::UpdateAllAgents()
+	{
+		IEnumerator^ i = listOfAgetns->GetEnumerator();
+		while (i->MoveNext())
+		{
+			((Agent^)(i->Current))->UpdateMe();
+
+		} 
+	}
 	System::Void Server::Server_Load(System::Object^  sender, System::EventArgs^  e) 
 			 {
 				 newagent1 = gcnew newAgent(this);
 				 newPainter = gcnew Painter(this);
-				 //listOfObjects = new myObject();
+				 listOfAgetns = gcnew System::Collections::ArrayList();
+				 listOfObjects = gcnew System::Collections::ArrayList(5);
 				 //если убрать комментарий,  то при компил€ции выдает ошибку LNK2034 и LNK2020
 				 newagent1->Show();
 			 }
@@ -51,6 +65,12 @@ namespace internship {
 					 col[i] = indexChecked;
 					 i++;
 				 }
+				 System::Random ^ r = gcnew System::Random();
+				 for(i = 0; i < 10; i++)
+				 {
+					 listOfObjects->Add(gcnew myObject(0, col[r->Next(0,count1)]));
+				 }
+				 UpdateAllAgents();
 				 pictureBoxObj->Refresh();
 			 }
 	System::Void Server::pictureBoxObj_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e)
@@ -60,7 +80,7 @@ namespace internship {
 				 {
 					 while (i < checkedListBoxObj->CheckedIndices->Count)
 					 {
-						newPainter->paint();
+						newPainter->paint(e, gcnew myObject(0, col[i]));
 						 i++;
 					 }
 				 }

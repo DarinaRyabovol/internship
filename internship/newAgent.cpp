@@ -39,6 +39,7 @@ System::Void newAgent::buttonAdd_Click(System::Object^  sender, System::EventArg
 				 Agent^ agent1 = gcnew Agent(textBoxName->Text, myParent);
 				 textBoxName->Text = L"";
 				 myParent->toCountLabel();
+				 myParent->getNewAgent(agent1);
 				 agent1->Show();
 			 }
 }

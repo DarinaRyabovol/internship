@@ -24,7 +24,7 @@ namespace internship {
 		/// Clean up any resources being used.
 		/// </summary>
 		~Agent();
-	private: System::Windows::Forms::PictureBox^  pictureBoxAgent;
+	public: System::Windows::Forms::PictureBox^  pictureBoxAgent;
 	protected: 
 
 	private:
@@ -32,6 +32,7 @@ namespace internship {
 		/// Required designer variable.
 		/// </summary>
 		Server^ serv;
+		Painter^ myPainter;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -52,6 +53,7 @@ namespace internship {
 			this->pictureBoxAgent->Size = System::Drawing::Size(378, 231);
 			this->pictureBoxAgent->TabIndex = 0;
 			this->pictureBoxAgent->TabStop = false;
+			this->pictureBoxAgent->Paint +=gcnew System::Windows::Forms::PaintEventHandler(this, &Agent::pictureBoxAgent_Paint);
 			// 
 			// Agent
 			// 
@@ -67,6 +69,11 @@ namespace internship {
 
 		}
 #pragma endregion
+	
+
+#pragma endregion
+	public:	void UpdateMe();
 	private: System::Void Agent_Load(System::Object^  sender, System::EventArgs^  e);
+			 System::Void pictureBoxAgent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
 	};
 }

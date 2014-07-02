@@ -1,7 +1,7 @@
 
 namespace internship
 {
-	class myObject;
+	ref class myObject;
 	ref class Server;
 	ref class Agent;
 	using namespace System;
@@ -9,13 +9,13 @@ namespace internship
 	public ref class Painter
 	{
 	private:
+		System::DateTime^ dt;
 		Server^ myServ;
-		Agent^ myAgent;
 	private:
-		void printEllipce(int color);
+		void printEllipce(System::Windows::Forms::PaintEventArgs^ e, int color);
 	public:
 		Painter(Server^ Serv);
-		void paint(myObject* obj);
-		System::Drawing::Graphics^ paint();
+		void paint(System::Windows::Forms::PaintEventArgs^ e, myObject^ obj);
+		void paint(System::Windows::Forms::PaintEventArgs^ e);
 	};
 }

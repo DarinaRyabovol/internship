@@ -1,6 +1,6 @@
 namespace internship
 {
-	public class myObject
+	public ref class myObject
 	{
 	private:
 		int shape;
