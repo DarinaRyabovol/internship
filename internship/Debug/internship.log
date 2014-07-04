@@ -1,17 +1,22 @@
-﻿Build started 02.07.2014 23:51:47.
-     1>Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" on node 2 (build target(s)).
+﻿Build started 04.07.2014 14:59:30.
+     1>Project "C:\Users\Denis\Documents\GitHub\internship\internship\internship.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\internship.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt Server.cpp /d1clr:nostdlib 
-         Server.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt newAgent.cpp /d1clr:nostdlib 
+         newAgent.cpp
+       ManagedIncrementalBuildPostProcessDependencyGraph:
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Could not load file or assembly 'file:///C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 10.0\VC\BIN\1033\CLUI.DLL' or one of its dependencies. The system cannot find the file specified.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Could not load file or assembly 'file:///C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 10.0\COMMON7\IDE\MSPDBSRV.EXE' or one of its dependencies. The system cannot find the file specified.
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\internship.Agent.resources /ASSEMBLYRESOURCE:Debug\internship.newAgent.resources /ASSEMBLYRESOURCE:Debug\internship.Server.resources /MANIFEST /ManifestFile:"Debug\internship.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Denis\Documents\GitHub\internship\Debug\internship.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\internship.Agent.resources /ASSEMBLYRESOURCE:Debug\internship.newAgent.resources /ASSEMBLYRESOURCE:Debug\internship.Server.resources /MANIFEST /ManifestFile:"Debug\internship.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Denis\Documents\GitHub\internship\Debug\internship.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\Agent.obj
          Debug\AssemblyInfo.obj
          Debug\internship.obj
@@ -19,14 +24,14 @@
          Debug\Painter.obj
          Debug\Server.obj
          Debug\stdafx.obj
-         internship.vcxproj -> C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe
+         internship.vcxproj -> C:\Users\Denis\Documents\GitHub\internship\Debug\internship.exe
        Manifest:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Даринка\Documents\GitHub\internship\Debug\internship.exe;#1" /manifest Debug\internship.exe.intermediate.manifest
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Denis\Documents\GitHub\internship\Debug\internship.exe;#1" /manifest Debug\internship.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\internship.unsuccessfulbuild".
          Touching "Debug\internship.lastbuildstate".
-     1>Done Building Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\Denis\Documents\GitHub\internship\internship\internship.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.79
+Time Elapsed 00:00:01.18

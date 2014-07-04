@@ -90,6 +90,7 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="internship.cpp" />
+    <ClCompile Include="IPainter.cpp" />
     <ClCompile Include="newAgent.cpp" />
     <ClCompile Include="Painter.cpp" />
     <ClCompile Include="Server.cpp" />
