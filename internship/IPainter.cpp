@@ -82,3 +82,51 @@ static class Base{
 ________________________
 
 
+
+
+
+
+	как динамически генерировать разные объекты одного интерфейса
+
+
+class server{
+
+	Agent agent;
+
+	public void MakeANewOjectAndPutItToAgents(){
+		case(погода)
+			пасмурно: agent.AddIObjec(new RectObject());
+			сухо - agent.AddIObjec(new EllipceObject());
+			хорошо -
+	}
+
+	A a = new A();
+
+	agent.addC(a);
+	agent.addY(a);
+
+}
+
+class A:C,G,R,Y{
+}
+
+
+
+class Agent{
+	IObjects* o;
+	public void AddIObjct(IObject o){
+		this->o.add(o);
+	}
+
+	private void UseIt(){
+		for (IObject o in this->o){
+			o.paint();
+		}
+	}
+
+	addC(C a){
+	}
+
+	addY(Y y){
+	}
+}
