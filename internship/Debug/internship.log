@@ -1,11 +1,15 @@
-﻿Build started 02.07.2014 23:51:47.
+﻿Build started 07.07.2014 23:09:46.
      1>Project "C:\Users\Даринка\Documents\GitHub\internship\internship\internship.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\internship.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\internship.unsuccessfulbuild".
        ClCompile:
          All outputs are up-to-date.
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\\" /AIC:\Windows\Microsoft.NET\Framework\v3.5\ /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\\" /AIC:\Windows\Microsoft.NET\Framework\v3.0\ /AIC:\Windows\Microsoft.NET\Framework\v2.0.50727\ /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\internship.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /FUC:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /analyze- /errorReport:prompt Server.cpp /d1clr:nostdlib 
          Server.cpp
+     1>c:\users\даринка\documents\github\internship\internship\Painter.h(13): warning C4570: 'internship::Painter' : is not explicitly declared as abstract but has abstract functions
+                 'void internship::Painter::print(int,int,internship::myObject ^,System::Windows::Forms::PaintEventArgs ^)' : is abstract
+                 c:\users\даринка\documents\github\internship\internship\Painter.h(18) : see declaration of 'internship::Painter::print'
+     1>c:\users\даринка\documents\github\internship\internship\server.cpp(116): warning C4715: 'internship::Server::CreateObject' : not all control paths return a value
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
@@ -29,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.79
+Time Elapsed 00:00:04.26

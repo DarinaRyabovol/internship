@@ -1,32 +1,42 @@
 namespace internship
 {
-	public ref class myObject
+	public interface class IObject
 	{
-	private:
-		int shape;
-		int color;
-	public:myObject()
+		System::String^ GetString();
+	};
+
+	ref class myObject: IObject
 	{
-		this->color = 0;
-		this->shape = 0;
-	}
-	public:	myObject(int shape, int color)
-	{
-		this->color = color;
-		this->shape = shape;
-	}
+	protected: System::String^ myString;
 	public:
-		int getShape()
+		virtual System::String^ GetString() = IObject::GetString 
+		{
+			return myString;
+		}
+	};
+
+	ref class OneObject : public myObject
 	{
-		return shape;
-	}
-		int getColor()
-	{
-		return color;
-	}
 	public:
-		~myObject()
+		OneObject()
+		{
+			myString = gcnew System::String(L"1");
+		}
+	};
+	ref class TwoObject : public myObject
 	{
-	}
+	public:
+		TwoObject()
+		{
+			myString = gcnew System::String(L"2");
+		}
+	};
+	ref class ThreeObject : public myObject
+	{
+	public:
+		ThreeObject()
+		{
+			myString = gcnew System::String(L"3");
+		}
 	};
 }

@@ -65,6 +65,9 @@
     <ClInclude Include="myObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ColerctionOfAgents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">

@@ -1,6 +1,5 @@
 #include "StdAfx.h"
-
-
+#include "ColerctionOfAgents.h"
 namespace internship {
 
 	using namespace std;
@@ -17,11 +16,7 @@ newAgent::newAgent(void)
 			//
 			//TODO: Add the constructor code here
 			//
-		}
-newAgent::newAgent(Server^ myParent)
-		{
-			InitializeComponent();
-			this->myParent = myParent;
+			currentServ = nullptr;
 		}
 
 newAgent::~newAgent()
@@ -32,14 +27,32 @@ newAgent::~newAgent()
 			}
 		}
 #pragma endregion
+
 System::Void newAgent::newAgent_Load(System::Object^  sender, System::EventArgs^  e) {
+				this->buttonAdd->Enabled = false;
+				this->buttonChange->Enabled = false;
+				myAgents = gcnew CollectionOfAgetns();
 			 }
 System::Void newAgent::buttonAdd_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				 Agent^ agent1 = gcnew Agent(textBoxName->Text, myParent);
+				 Agent^ agent1 = gcnew Agent(textBoxName->Text, currentServ);
 				 textBoxName->Text = L"";
-				 myParent->toCountLabel();
-				 myParent->getNewAgent(agent1);
+				 currentServ->toCountLabel();
+				 myAgents->AddAgent(agent1);
 				 agent1->Show();
-			 }
+}
+System::Void newAgent::buttonCreate_Click(System::Object^  sender, System::EventArgs^  e)
+		 {
+			 currentServ  = gcnew Server(myAgents->GetAllAgents());
+			 buttonAdd->Enabled = true;
+			 buttonChange->Enabled = true;
+			 buttonCreate->Enabled = false;
+			 currentServ->Show();
+		 }
+System::Void newAgent::buttonChange_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	delete(currentServ);
+	currentServ = gcnew Server(myAgents->GetAllAgents());
+	currentServ->Show();
+}
 }

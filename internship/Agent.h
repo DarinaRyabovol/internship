@@ -24,7 +24,7 @@ namespace internship {
 		/// Clean up any resources being used.
 		/// </summary>
 		~Agent();
-	public: System::Windows::Forms::PictureBox^  pictureBoxAgent;
+	public: static System::Windows::Forms::PictureBox^  pictureBoxAgent;
 	protected: 
 
 	private:
@@ -32,7 +32,6 @@ namespace internship {
 		/// Required designer variable.
 		/// </summary>
 		Server^ serv;
-		Painter^ myPainter;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -72,7 +71,8 @@ namespace internship {
 	
 
 #pragma endregion
-	public:	void UpdateMe();
+	public:	static void UpdateMe();
+			void ChangeServ(Server^ serv);
 	private: System::Void Agent_Load(System::Object^  sender, System::EventArgs^  e);
 			 System::Void pictureBoxAgent_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
 	};

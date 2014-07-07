@@ -3,7 +3,6 @@
 
 
 namespace internship {
-
 	ref class myObject;
 	ref class Agent;
 	ref class Painter;
@@ -14,6 +13,14 @@ namespace internship {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	ref struct AgentWithCollection
+	{
+		Agent^ currentAgent;
+		System::Collections::ArrayList^ collection;
+		AgentWithCollection(Agent^ a);
+		~AgentWithCollection();
+	};
+
 	public ref class Server : public System::Windows::Forms::Form
 	{
 	public:
@@ -21,25 +28,27 @@ namespace internship {
 
 	protected:
 		~Server();
-	private: System::Windows::Forms::Label^  labelObj;
+
 	protected: 
 	private: System::Windows::Forms::Label^  labelAgent;
 	private: System::Windows::Forms::Label^  labelKolAgent;
-	 public: System::Windows::Forms::PictureBox^  pictureBoxObj;
+	 public: static System::Windows::Forms::PictureBox^  pictureBoxObj;
 
 
-	private: System::Windows::Forms::CheckedListBox^  checkedListBoxObj;
+
 	private: System::Windows::Forms::Button^  buttonOk;
 
 	public:
 
-		System::Collections::ArrayList^ listOfObjects;
 	private:
-		newAgent^ newagent1;
-		int *col;
+		static System::Timers::Timer^ myTimer;
+		static System::Timers::Timer^ myTimerObj;
+		static array<Painter^>^ arrPainter;
+		static array<myObject^>^ arrAllObjects;
+		static System::Random^ r;
+		static System::Collections::ArrayList^ Agents;
 		int countOfAgents;
-		System::Collections::ArrayList^ listOfAgetns;
-		Painter^ newPainter;
+		static Painter^ newPainter;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -49,28 +58,17 @@ namespace internship {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->labelObj = (gcnew System::Windows::Forms::Label());
 			this->labelAgent = (gcnew System::Windows::Forms::Label());
 			this->labelKolAgent = (gcnew System::Windows::Forms::Label());
 			this->pictureBoxObj = (gcnew System::Windows::Forms::PictureBox());
-			this->checkedListBoxObj = (gcnew System::Windows::Forms::CheckedListBox());
 			this->buttonOk = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxObj))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// labelObj
-			// 
-			this->labelObj->AutoSize = true;
-			this->labelObj->Location = System::Drawing::Point(37, 25);
-			this->labelObj->Name = L"labelObj";
-			this->labelObj->Size = System::Drawing::Size(91, 13);
-			this->labelObj->TabIndex = 0;
-			this->labelObj->Text = L"ֲûבמנ מבתוךעמג";
-			// 
 			// labelAgent
 			// 
 			this->labelAgent->AutoSize = true;
-			this->labelAgent->Location = System::Drawing::Point(248, 25);
+			this->labelAgent->Location = System::Drawing::Point(9, 25);
 			this->labelAgent->Name = L"labelAgent";
 			this->labelAgent->Size = System::Drawing::Size(167, 13);
 			this->labelAgent->TabIndex = 1;
@@ -79,7 +77,7 @@ namespace internship {
 			// labelKolAgent
 			// 
 			this->labelKolAgent->AutoSize = true;
-			this->labelKolAgent->Location = System::Drawing::Point(431, 25);
+			this->labelKolAgent->Location = System::Drawing::Point(200, 25);
 			this->labelKolAgent->Name = L"labelKolAgent";
 			this->labelKolAgent->Size = System::Drawing::Size(13, 13);
 			this->labelKolAgent->TabIndex = 2;
@@ -94,18 +92,9 @@ namespace internship {
 			this->pictureBoxObj->TabStop = false;
 			this->pictureBoxObj->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Server::pictureBoxObj_Paint);
 			// 
-			// checkedListBoxObj
-			// 
-			this->checkedListBoxObj->FormattingEnabled = true;
-			this->checkedListBoxObj->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"1", L"2", L"3", L"4"});
-			this->checkedListBoxObj->Location = System::Drawing::Point(134, 4);
-			this->checkedListBoxObj->Name = L"checkedListBoxObj";
-			this->checkedListBoxObj->Size = System::Drawing::Size(92, 34);
-			this->checkedListBoxObj->TabIndex = 5;
-			// 
 			// buttonOk
 			// 
-			this->buttonOk->Location = System::Drawing::Point(384, 49);
+			this->buttonOk->Location = System::Drawing::Point(407, 22);
 			this->buttonOk->Name = L"buttonOk";
 			this->buttonOk->Size = System::Drawing::Size(59, 18);
 			this->buttonOk->TabIndex = 6;
@@ -119,11 +108,9 @@ namespace internship {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(487, 262);
 			this->Controls->Add(this->buttonOk);
-			this->Controls->Add(this->checkedListBoxObj);
 			this->Controls->Add(this->pictureBoxObj);
 			this->Controls->Add(this->labelKolAgent);
 			this->Controls->Add(this->labelAgent);
-			this->Controls->Add(this->labelObj);
 			this->Name = L"Server";
 			this->Text = L"Server";
 			this->Load += gcnew System::EventHandler(this, &Server::Server_Load);
@@ -136,8 +123,18 @@ namespace internship {
 
 #pragma endregion
 	public: void toCountLabel();
-	public: void getNewAgent(Agent^ newAg);
-	private: void UpdateAllAgents();
+			Painter^ GetPainter();
+			int GetRandom();
+			void DeleteAgent(Agent^ ag);
+			void AddAgent(Agent^ a);
+	public: Server(ArrayList^ agents);
+			System::Collections::ArrayList^ GetMyObjects(Agent^ ag);
+	private: static void UpdateAllAgents();
+			 void ChangeServer();
+			 void ChangePainter();
+			 myObject^ CreateObject();
+			 static void TimerObject(System::Object^ source, System::Timers::ElapsedEventArgs^ e);
+			 static void TimerPainter(System::Object^ source, System::Timers::ElapsedEventArgs^ e);
 	private: System::Void Server_Load(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void buttonOk_Click(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void pictureBoxObj_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);

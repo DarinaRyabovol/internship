@@ -28,38 +28,53 @@ Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b0
 	hash=None, flags=None
 Class internship.newAgent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.Button buttonAdd : Public
 Class internship.Server: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(System.Collections.ArrayList): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Windows.Forms.PictureBox pictureBoxObj : Public
-    System.Collections.ArrayList listOfObjects : Public
+    System.Windows.Forms.PictureBox pictureBoxObj : Public, Static
   Methods:
     toCountLabel(): PrivateScope, Public, HideBySig
-    getNewAgent(Agent): PrivateScope, Public, HideBySig
+    GetPainter(): PrivateScope, Public, HideBySig
+    GetRandom(): PrivateScope, Public, HideBySig
+    DeleteAgent(Agent): PrivateScope, Public, HideBySig
+    AddAgent(Agent): PrivateScope, Public, HideBySig
+    GetMyObjects(Agent): PrivateScope, Public, HideBySig
 Class internship.Agent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.String, internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Windows.Forms.PictureBox pictureBoxAgent : Public
+    System.Windows.Forms.PictureBox pictureBoxAgent : Public, Static
   Methods:
-    UpdateMe(): PrivateScope, Public, HideBySig
-Class internship.Painter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    UpdateMe(): PrivateScope, Public, Static, HideBySig
+    ChangeServ(Server): PrivateScope, Public, HideBySig
+Interface internship.IPainter: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
   Methods:
-    paint(PaintEventArgs): PrivateScope, Public, HideBySig
-    paint(PaintEventArgs, myObject): PrivateScope, Public, HideBySig
-Class internship.myObject: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    print(Int32, Int32, myObject, PaintEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class internship.Painter: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
-    System.IDisposable
+    internship.IPainter
   Methods:
-    getShape(): PrivateScope, Public, HideBySig
-    getColor(): PrivateScope, Public, HideBySig
-    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+    print(Int32, Int32, myObject, PaintEventArgs): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class internship.RoundPainter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :internship.Painter
+    Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    print(Int32, Int32, myObject, PaintEventArgs): PrivateScope, Public, Virtual, HideBySig
+Class internship.SquarePainter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :internship.Painter
+    Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    print(Int32, Int32, myObject, PaintEventArgs): PrivateScope, Public, Virtual, HideBySig
+Class internship.TrianglePainter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :internship.Painter
+    Void .ctor(internship.Server): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    print(Int32, Int32, myObject, PaintEventArgs): PrivateScope, Public, Virtual, HideBySig
+Interface internship.IObject: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Methods:
+    GetString(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract

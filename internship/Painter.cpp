@@ -4,39 +4,50 @@
 namespace internship
 {
 	using namespace System;
-
-	void Painter::printEllipce(System::Windows::Forms::PaintEventArgs^ e, int color)
-		{
-			Random^ r = gcnew Random(color);
-			switch(color)
-			{
-			case 0:
-				e->Graphics->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
-				break;
-			case 1:
-				e->Graphics->FillEllipse(System::Drawing::Brushes::Red,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
-				break;
-			case 2:
-				e->Graphics->FillEllipse(System::Drawing::Brushes::Blue,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
-				break;
-			case 3:
-				e->Graphics->FillEllipse(System::Drawing::Brushes::DarkOrange,System::Drawing::RectangleF(r->Next()%100,r->Next(0, 150),40,40));
-				break;
-			}
-		}
-	Painter::Painter(Server^ Serv)
-		{
-			myServ = Serv;
-			dt = gcnew System::DateTime(2013,5,30);
-		}
-	void Painter::paint(System::Windows::Forms::PaintEventArgs^ e, myObject^ obj)
-		{
-			printEllipce(e, obj->getColor());
-		}
-	void Painter::paint(System::Windows::Forms::PaintEventArgs^ e)
+	RoundPainter::RoundPainter(Server^ serv)
 	{
-		Random^ r = gcnew Random();
-		e->Graphics->FillEllipse(System::Drawing::Brushes::Green,System::Drawing::RectangleF(r->Next(0,200),r->Next(0,150),40,40));
-		return ;
+		this->serv = serv;
+	}
+	void RoundPainter::print(int x, int y, myObject^ obj, System::Windows::Forms::PaintEventArgs^ e)
+	{
+		System::Drawing::SolidBrush^ br = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Red);
+		e->Graphics->FillEllipse(br, x, y, 40,40);
+		e->Graphics->DrawEllipse(System::Drawing::Pens::Black, x, y, 40,41);
+		e->Graphics->DrawString(obj->GetString(),
+			gcnew System::Drawing::Font(L"Arial", 10),
+			System::Drawing::Brushes::Black,
+			System::Drawing::PointF(x+4,y+4));
+	}
+	SquarePainter::SquarePainter(Server^ serv)
+	{
+		this->serv = serv;
+	}
+	void SquarePainter::print(int x, int y, myObject^ obj, System::Windows::Forms::PaintEventArgs^ e)
+	{
+		System::Drawing::SolidBrush^ br = gcnew System::Drawing::SolidBrush(System::Drawing::Color::LightGreen);
+		e->Graphics->FillRectangle(br, x, y, 40,40);
+		e->Graphics->DrawRectangle(System::Drawing::Pens::Black, x, y, 40,40);
+		e->Graphics->DrawString(obj->GetString(),
+			gcnew System::Drawing::Font(L"Arial", 10),
+			System::Drawing::Brushes::Black,
+			System::Drawing::PointF(x+4,y+4));
+	}
+	TrianglePainter::TrianglePainter(Server^ serv)
+	{
+		this->serv = serv;
+	}
+	void TrianglePainter::print(int x, int y, myObject^ obj, System::Windows::Forms::PaintEventArgs^ e)
+	{
+		System::Drawing::SolidBrush^ br = gcnew System::Drawing::SolidBrush(System::Drawing::Color::Violet);
+		array<System::Drawing::Point>^ points = gcnew array<System::Drawing::Point>(3);
+		points[0] = System::Drawing::Point(x,y);
+		points[1] = System::Drawing::Point(x + 40,y+80);
+		points[2] = System::Drawing::Point(x-30,y+80);
+		e->Graphics->FillPolygon(br, points);
+		e->Graphics->DrawPolygon(System::Drawing::Pens::Black, points);
+		e->Graphics->DrawString(obj->GetString(),
+			gcnew System::Drawing::Font(L"Arial", 10),
+			System::Drawing::Brushes::Black,
+			System::Drawing::PointF(x+4,y+4));
 	}
 }
